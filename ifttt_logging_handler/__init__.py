@@ -34,10 +34,8 @@ server you keep forgetting about logs an error).
 from __future__ import (absolute_import, division, print_function,
                         unicode_literals)
 
-
 import logging
 import logging.handlers
-from urllib import quote
 import sys
 import traceback
 
@@ -46,9 +44,11 @@ import requests
 
 __version__ = '0.1.0'
 
-
 if sys.version_info < (3,):
     str, bytes = unicode, str
+    from urllib import quote
+else:
+    from urllib.parse import quote
 
 
 class IFTTTLoggingHandler(logging.Handler):
@@ -78,7 +78,7 @@ class IFTTTLoggingHandler(logging.Handler):
         the logger to which the handler is attached may also have a
         level threshold).
         '''
-        super(IFTTTLoggingHandler, self).__init__(level)
+        super(IFTTTLoggingHandler, self).__init__(level=level)
         self._url = self._URL_TEMPLATE.format(key=quote(key, ''),
                                               event=quote(event, ''))
         self._values = values

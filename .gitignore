@@ -1,4 +1,8 @@
 /venv/
+/.cache/
+/.tox/
+
+*.egg-info/
 
 .*.swp
 *.pyc
