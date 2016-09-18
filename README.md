@@ -1,10 +1,17 @@
 # A logging handler that forwards log messages to IFTTT.com.
 
-IFTTT.com is a platform that allows you to setup automatic reactions to a wide
-range of events. This Python module provides a logging handler that forwards
-log messages to IFTTT so that you can automatically react to them (for example
-to get an e-mail if that cron job on some remote server you keep forgetting
-about logs an error).
+[IFTTT.com][ifttt] is a platform that allows you to setup automatic reactions
+to a wide range of events. This Python module provides a logging handler that
+forwards log messages to IFTTT so that you can automatically react to them (for
+example to get an e-mail if that cron job on some remote server you keep
+forgetting about logs an error).
+
+[ifttt]: https://ifttt.com
+
+
+## Installation
+
+    pip install -e git+https://github.com/torfsen/ifttt-logging-handler#egg=ifttt-logging-handler
 
 
 ## Usage
